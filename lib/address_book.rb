@@ -11,8 +11,8 @@ class Contact
     @job_title = attributes.fetch(:job_title)
     @company = attributes.fetch(:company)
     @contact_type = attributes.fetch(:contact_type)
-    @id = @@book.length + 1
     @zip = attributes.fetch(:zip)
+    @id = @@book.length + 1
 
   end
 

@@ -9,6 +9,11 @@ get('/') do
   erb(:input)
 end
 
+# get('/') do
+#   @input = Contact.all()
+#   erb(:input2)
+# end
+
 post('/output') do
   @first_name = params['first_name']
   @last_name = params['last_name']
@@ -21,6 +26,14 @@ post('/output') do
   @input = Contact.all()
   erb(:output)
 end
+
+# post('/') do
+#   @city = params['city']
+#   @phone_number = params['phone_number']
+#   @contact = Contact.new(:city=> @city, :phone_number=> @phone_number)
+#   @contact.save
+#
+# end
 
 
 
