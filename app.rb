@@ -16,7 +16,12 @@ post('/') do
   company = params['company']
   contact_type = params['contact_type']
   contact = Contact.new(:first_name=> first_name, :last_name=> last_name, :job_title=> job_title, :company=> company, :contact_type=> contact_type)
-  contact.save()
+  contact.save
   @input = Contact.all()
   erb(:input)
+end
+
+get('/contacts/:id') do
+  @contact = Contact.find(params[:id])
+  erb(:output)
 end

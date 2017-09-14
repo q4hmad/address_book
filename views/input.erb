@@ -1,10 +1,14 @@
 <h1>Add a contact to your address book!</h1>
 
 <% @input.each do |input| %>
-  <p><%= input.name %></p>
+  <p><%= input.first_name %></p>
+  <p><%= input.last_name %></p>
+  <p><%= input.job_title %></p>
+  <p><%= input.company %></p>
+  <p><%= input.contact_type %></p>
 <% end %>
 
-<form action="/input" method="post">
+<form action="/" method="post">
   <div class="form-group">
     <label for="first_name">First Name:</label>
     <input name="first_name" class="form-control" type="text">

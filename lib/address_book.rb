@@ -11,7 +11,7 @@ class Contact
     @job_title = attributes.fetch(:job_title)
     @company = attributes.fetch(:company)
     @contact_type = attributes.fetch(:contact_type)
-    @id = @@list.length + 1
+    @id = @@book.length + 1
   end
 
   def self.all()
@@ -26,4 +26,12 @@ class Contact
     @@book = []
   end
 
+  def self.find(id)
+    contact_id = id.to_i
+    @@book.each do |contact|
+      if contact.id == contact_id
+        return contact
+      end
+    end
+  end
 end
