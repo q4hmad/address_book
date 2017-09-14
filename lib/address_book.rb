@@ -3,7 +3,7 @@ class Contact
   @@book = []
 
   attr_reader :id
-  attr_accessor(:first_name, :last_name, :job_title, :company, :contact_type)
+  attr_accessor(:first_name, :last_name, :job_title, :company, :contact_type, :zip)
 
   def initialize(attributes)
     @first_name = attributes.fetch(:first_name)
@@ -12,6 +12,8 @@ class Contact
     @company = attributes.fetch(:company)
     @contact_type = attributes.fetch(:contact_type)
     @id = @@book.length + 1
+    @zip = attributes.fetch(:zip)
+
   end
 
   def self.all()

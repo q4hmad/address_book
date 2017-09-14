@@ -1,14 +1,15 @@
 <h1>Add a contact to your address book!</h1>
 
 <% @input.each do |input| %>
-  <p><%= input.first_name %></p>
+<a href:='/output'><%= input.first_name %></a>
   <p><%= input.last_name %></p>
   <p><%= input.job_title %></p>
   <p><%= input.company %></p>
   <p><%= input.contact_type %></p>
+  <p><%= input.zip %></p>
 <% end %>
 
-<form action="/" method="post">
+<form action="/output" method="post">
   <div class="form-group">
     <label for="first_name">First Name:</label>
     <input name="first_name" class="form-control" type="text">
@@ -28,6 +29,10 @@
   <div class="form-group">
     <label for="contact_type">Contact Type(Personal, Professional):</label>
     <input name="contact_type" class="form-control" type="text">
+  </div>
+  <div class="form-group">
+    <label for="zip">Add zip code:</label>
+    <input name="zip" class="form-control" type="text">
   </div>
   <button type="submit" class="btn-success">Add Contact!</button>
 </form>
